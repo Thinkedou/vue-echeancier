@@ -9,7 +9,17 @@ console.log('à rembourser chaque mois' , mensualite)
 const debut = new Date()
 console.log(debut)
 
+const echeancier = []
 
+for (let i = 1; i <= dureeEnMois; i++) {
+  echeancier.push({
+    dueDate : new Date(debut.setMonth(debut.getMonth()+1)),
+    mensualite:mensualite,
+    reste: emprunt-(mensualite*i)
+  })
+}
+
+console.log(echeancier)
 
 
 
@@ -30,10 +40,10 @@ console.log(debut)
     </tr>
   </thead>
   <tbody >
-    <tr v-for="monthly in dureeEnMois">
-      <th scope="row">{{new Date(debut.setMonth(debut.getMonth()+1)).toISOString()}}</th>
-      <td>{{mensualite}}</td>
-      <td>{{ emprunt-(mensualite*monthly) }}</td>
+    <tr v-for="monthly in echeancier">
+      <th scope="row">{{monthly.dueDate}}</th>
+      <td>{{monthly.mensualite}}</td>
+      <td>{{ monthly.reste }}</td>
     </tr>
   </tbody>
 </table>
