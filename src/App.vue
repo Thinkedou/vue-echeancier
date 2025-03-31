@@ -20,40 +20,61 @@ for (let i = 1; i <= dureeEnMois; i++) {
 }
 
 console.log(echeancier)
-
-
-
-
-
 </script>
 
 <template>
-   <table>
-  <caption>
-    Emprunt: {{ emprunt }}€, sur {{ dureeEnMois }} mois
-  </caption>
-  <thead>
-    <tr>
-      <th scope="col">Mois</th>
-      <th scope="col">à rembourser</th>
-      <th scope="col">Reste du</th>
-    </tr>
-  </thead>
-  <tbody >
-    <tr v-for="monthly in echeancier">
-      <th scope="row">{{monthly.dueDate}}</th>
-      <td>{{monthly.mensualite}}</td>
-      <td>{{ monthly.reste }}</td>
-    </tr>
-  </tbody>
-</table>
+   <header>
+        <h1>écheancier des petits sous €</h1>
+   </header>
+   <container>
+      <div class="form-container">
+        <span class="custom-select">
+          <label for="duration">Choisir la durée </label>
+          <select name="duration" id="duration">
+            <option value="">--Merci de choisir une durée--</option>
+            <option value="5">5 ans</option>
+            <option value="10">10 ans</option>
+            <option value="15">15 ans</option>
+            <option value="20">20 ans</option>
+            <option value="30">30 ans</option>
+          </select>
+        </span>
+        <span class="custom-input">
+          <label for="amount">Emprunt </label>
+          <input
+            type="text"
+            id="amount"
+            name="amount"
+            required />
+        </span>
+        
+      </div>
+      <div class="table-container">
+        <h4>{{emprunt}} € à rembourser sur {{ dureeEnMois }} mois</h4>
+        <div class="table-itself">
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">Mois</th>
+                <th scope="col">Remboursé</th>
+                <th scope="col">Reste du</th>
+              </tr>
+            </thead>
+            <tbody >
+              <tr v-for="monthly in echeancier">
+                <th scope="row">{{monthly.dueDate}}</th>
+                <td>{{monthly.mensualite}}</td>
+                <td>{{ monthly.reste }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+   </container>
 </template>
 
 <style scoped>
 table {
-  border-collapse: collapse;
-  border: 2px solid rgb(140 140 140);
-  font-family: sans-serif;
   font-size: 0.8rem;
   letter-spacing: 1px;
 }

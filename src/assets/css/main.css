@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+MX+Guides&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gidole&display=swap');
+body{
+    margin:0;
+    background-color: antiquewhite;
+    font-family: "Gidole", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+header{
+    margin:0;
+    padding:8px 0 8px 60px;
+    background-color: white;
+    height:auto;
+    h1{
+        font-family: "Playwrite MX Guides", cursive;
+        font-weight: 400;
+        font-style: normal;
+        margin-top:0;
+    }
+    h1::first-letter{
+        color: #e59c00
+    }
+}
+
+
+container{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:54px;
+    border-radius:10px;
+    display:grid;
+    padding-bottom: 12px;
+    max-width:880px;
+    justify-content: center;
+}
+div.form-container{
+    margin-top:12px;
+    display:flex;
+    padding:14px;
+    border-radius:8px;
+    border:1px solid #e7a311;
+    justify-content: space-around;
+    min-width:680px;
+    background-color: white;
+}
+
+div.table-container{
+    
+    background-color: white;
+    margin-top:8px;
+    margin-bottom: 8px;
+    padding:14px;
+    border-radius:8px;
+    border:1px solid #e7a311;
+    min-width:680px;
+}
+
+.custom-select {
+    min-width: 250px;
+  }
+
+.custom-select select {
+    appearance: none;
+    font-size: 0.8rem;
+    font-family: "Gidole", sans-serif;
+    padding: 0.675em 6em 0.675em 1em;
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+}
+
+.custom-input input{
+    appearance: none;
+    font-size: 0.8rem;
+    font-family: "Gidole", sans-serif;
+    padding: 0.675em 6em 0.675em 1em;
+    background-color: #fff;
+    border: 1px solid #caced1;
+    border-radius: 0.25rem;
+    color: #000;
+    cursor: pointer;
+}
